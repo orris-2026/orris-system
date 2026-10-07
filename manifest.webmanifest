@@ -1,0 +1,23 @@
+{
+  "name": "أورس — النظام الداخلي",
+  "short_name": "أورس",
+  "description": "نظام أورس الداخلي: الاعتمادات والطلبات والمهام والبصمة",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html?src=app",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EEF0FB",
+  "theme_color": "#3B12A8",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "الاعتمادات", "url": "./index.html#/inbox", "icons": [{"src": "icon-192.png", "sizes": "192x192"}]},
+    {"name": "المهام", "url": "./index.html#/tasks", "icons": [{"src": "icon-192.png", "sizes": "192x192"}]}
+  ]
+}
