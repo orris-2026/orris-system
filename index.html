@@ -3854,7 +3854,7 @@ LIVE.keys=()=>Object.keys(S).filter(k=>!LIVE_EXCL.has(k)&&k[0]!=='_'&&!(LIVE.pro
 function liveStrip(k,v){if(k!=='employees'||!Array.isArray(v))return v;
   return v.map(e=>{const x=Object.assign({},e);SAL_F.forEach(f=>{if(f in x)x[f]=0});if(x.c){const c={};Object.keys(x.c).forEach(q=>c[q]=0);x.c=c}delete x.zero;return x})}
 const liveVal=k=>k==='SEQ'?SEQ:S[k];
-const liveSer=k=>JSON.stringify(liveStrip(k,liveVal(k))??null);
+const liveSer=k=>JSON.stringify(liveStrip(k,liveVal(k))??null,function(_,v){if(v&&typeof v==='object'&&!Array.isArray(v)){const o={};Object.keys(v).sort().forEach(q=>o[q]=v[q]);return o}return v});
 function liveApplySal(){if(!Array.isArray(S.employees))return;S.employees.forEach(e=>{const s=LIVE.sal[e.id];if(!s)return;SAL_F.forEach(f=>{if(s[f]!==undefined)e[f]=s[f]});if(s.c)e.c=Object.assign({},s.c);e.zero=!e.salary})}
 function liveReplace(k,v){
   if(k==='SEQ'){Object.keys(v||{}).forEach(q=>SEQ[q]=Math.max(+SEQ[q]||0,+v[q]||0));return}
