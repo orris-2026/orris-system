@@ -2765,7 +2765,7 @@ function aiAnswer(q){
   if(/عهده/.test(n)&&/طلب|سو|ابي|اطلب|جهز/.test(n)){if(!ROLE_OK('pm'))return aiBot('العهدة يطلبها مدير المشروع فقط من داخل المشروع.');const p=curProject();if(!p)return aiBot('ما عندك مشروع قيد التنفيذ.');let a=aiAmt(q)||5000;
     go('projects/view/'+p.id+'/custody');setTimeout(()=>{reqCustody(p.id);setTimeout(()=>{const el=$('#cu_a');if(el){el.value=Math.min(a,5000);el.dispatchEvent(new Event('input'))}},80)},250);
     return aiBot('جهّزت لك طلب عهدة لمشروع <b>'+esc(p.name)+'</b> بمبلغ <b>'+fmt(Math.min(a,5000))+' ر.س</b>'+(a>5000?' (الحد الأقصى 5,000)':'')+'. راجعه واضغط إرسال.')}
-  if(/طلب مالي|طلب صرف|ارفع طلب|سو طلب|اطلب مبلغ|طلب جديد/.test(n)){const dept=Object.entries(S.managers).find(([d,x])=>x===S.role)?.[0];if(!dept)return aiBot('رفع الطلبات المالية لمدراء الإدارات فقط.');
+  if(/طلب مالي|طلب صرف|ارفع طلب|سو طلب|اطلب مبلغ|طلب جديد/.test(n)){const dept=Object.entries(S.managers).find(([d,x])=>x===S.role)?.[0];if(!dept){go('requests/list');setTimeout(()=>newRequest(),250);return aiBot('فتحت لك طلب مالي جديد — اختر البند، اكتب الوصف والمبلغ، وأرفق الفاتورة ثم «رفع الطلب».')}
     const a=aiAmt(q);let desc=q.replace(/[\d,٬.]+/g,'').replace(/(ارفع|سو|سوي|سوّ|جهز|ابي|لي)?\s*(طلب مالي|طلب صرف|طلب جديد)/g,'').replace(/ر\.?س|ريال|الف/g,'').trim();
     const acc=S.accounts.filter(x=>x.depts.includes(dept));const pick=acc.find(x=>norm(desc).split(' ').some(w=>w.length>2&&norm(x.name).includes(w)));
     newRequest(r.a==='projects'&&r.s==='view'?r.id:'');setTimeout(()=>{if(a){$('#fr_a').value=a}if(desc){$('#fr_d').value=desc}if(pick){$('#fr_acc').value=pick.code}$('#fr_a').dispatchEvent(new Event('input'))},80);

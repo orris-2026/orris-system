@@ -1,5 +1,5 @@
 /* أورس v17 — Service Worker: الصفحة من الشبكة أولاً · الصور والقاموس والمكتبات من الجهاز · يفتح بدون إنترنت · الإشعارات */
-const C='orris-v17i';
+const C='orris-v17j';
 const ASSETS=['./','./index.html','./icon-192.png','./logo-w.png','./logo-n.png','./bal-hd.jpg','./bal-ft.jpg','./i18n-en.json'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>Promise.all(ASSETS.map(a=>c.add(a).catch(()=>{})))));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
