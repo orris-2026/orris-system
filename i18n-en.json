@@ -4164,5 +4164,14 @@
 "تجريبي": "Demo",
 "تقارير": "Reports",
 "تقرير": "Report",
-"ملخص": "Summary"
+"ملخص": "Summary",
+"اكتب أو اضغط المايك وتكلّم… مثال: سوّ طلب عهدة 3000": "Type or tap the mic and speak… e.g. create a 3,000 custody request",
+"بانتظار تعيين مدير المشروع من الرئيس التنفيذي أو رئيسي الفعاليات - المشاريع.": "Awaiting project manager assignment by the CEO or the Events & Projects heads.",
+"البنود من الكوست شيت المعتمد فقط. كل أمر شراء يُعتمد من الرئيس التنفيذي ثم المالية قبل الإصدار. بند غير موجود؟ افتح نسخة كوست شيت جديدة.": "Lines come from the approved cost sheet only. Every purchase order is approved by the CEO, then Finance, before it is issued. Line missing? Open a new cost-sheet version.",
+"البنود من الكوست شيت المعتمد فقط. ضمن الكمية والقيمة يصدر مباشرة بدون اعتماد. التجاوز يحتاج اعتماد الرئيس ثم المالية. بند غير موجود؟ افتح نسخة كوست شيت جديدة.": "Lines come from the approved cost sheet only. Every purchase order is approved by the CEO, then Finance, before it is issued. Line missing? Open a new cost-sheet version.",
+"ℹ️ ضمن الكوست شيت — يُرسل لاعتماد الرئيس التنفيذي ثم المالية قبل الإصدار.": "ℹ️ Within the cost sheet — sent to the CEO, then Finance, for approval before issue.",
+"ضمن الكوست شيت — يُرسل لاعتماد الرئيس التنفيذي ثم المالية قبل الإصدار.": "Within the cost sheet — sent to the CEO, then Finance, for approval before issue.",
+"— أمر شراء (كل الأوامر قبل الإصدار)": "— Purchase order (all orders, before issue)",
+"(م²)": "(m²)",
+"م²": "m²"
 }
