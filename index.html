@@ -6838,6 +6838,16 @@ if(V.depts){const _V=V.depts;V.depts=(sub,id,x)=>sub==='reports'?deptReportsView
  if(typeof liveStart0==='function'){const _l0=liveStart0;liveStart0=async function(){FIN_DOCS.concat(['payrollBy','payroll']).forEach(k=>{if(!canRead(k))blank(k)});if(!(LIVE.prof||{}).fin){blank('jobs');blank('licenses')}return _l0.apply(this,arguments)}}
 })();
 
+/* ---------- إدارتان منفصلتان: إدارة المشاريع (شريف — التخطيط والتصميم والإداري) · إدارة الفعاليات (بنان — التنفيذ على الأرض والموردين) ---------- */
+{const PRJN='إدارة المشاريع',EVN2='إدارة الفعاليات';
+ try{Object.assign(DEPTS,{pmo:PRJN,projects:PRJN,events:EVN2})}catch(e){}try{DASH_N.pmo=PRJN;DASH_N.events=EVN2}catch(e){}
+ try{Object.assign(I18N,{'إدارة المشاريع':'Projects Management','إدارة الفعاليات':'Events Management','مديرة إدارة الفعاليات':'Head of Events','رئيس إدارة المشاريع':'Head of Projects','مديرة الفعاليات':'Events Manager'});I18N_RE=null}catch(e){}
+ const evHead=e=>{let x=e,g=0;while(x&&g<8){const m=empByName(x.mgr);if(!m||m.dep!=='events')return x;x=m;g++}return x};
+ if(typeof apFirst==='function'){const _af=apFirst;apFirst=function(reqName){const e=empByName(reqName);
+   if(e&&e.dep==='events'){const h=evHead(e);if(h&&h.n!==reqName)return {n:h.n,l:'مديرة '+EVN2};return _af.apply(this,arguments)}
+   if(e&&['pmo','projects'].includes(e.dep)){const sh=(G().sector||{}).who||'شريف السيد';if(sh!==reqName)return {n:sh,l:'رئيس '+PRJN}}
+   return _af.apply(this,arguments)}}}
+
 if(LIVE.on)LIVE.boot();else{S.notes=notesFor(S.role);render();}
 </script>
 </body>
